@@ -1,22 +1,38 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
+
+
+func sayGreeting(name string  ){
+	fmt.Printf("Good Morning , %v \n", name)
+}
+
+func sayBye(name string  ){
+	fmt.Printf("Good bye , %v \n", name)
+}
+
+func cycleNames( names []string  , fun func(string)  ) {
+	for _, name := range names {
+		fun(name)
+	}
+}
+
+func circleArea(radius float64) float64 {
+	return math.Pi * radius * radius
+}
+
 
 func main() {
-	age := 20
-	name := "Kenny"
-	score := 20.56
+	
+	names := []string{"Kenny" , "Punk", "Adam"}
+	cycleNames(names,sayGreeting )
+	cycleNames(names,sayBye )
 
-	fmt.Printf("Hello I am %v and my age is %v \n", name, age)
-	fmt.Printf("Hello I am %q and my age is %q \n", name, age)
-	fmt.Printf("Hello I am %T and my age is %T \n", name, age)
-
-	fmt.Printf("Your score is : %0.3f \n", score)
-
-	var str = fmt.Sprintf("Hello I am %v and my age is %v \n", name, age)
-	fmt.Println("Saved String :",str)
-
-
-
+	area1 := circleArea(45.5)
+	
+	fmt.Printf("CIrcle area : %2.3f \n", area1)
 }
 
