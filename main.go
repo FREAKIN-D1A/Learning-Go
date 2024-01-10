@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"math"
+	"strings"
 )
 
 
@@ -24,6 +25,20 @@ func circleArea(radius float64) float64 {
 	return math.Pi * radius * radius
 }
 
+func getInitials(n string ) (string, string) {
+	s := strings.ToUpper(n)
+	names := strings.Split(s, " ")
+
+	var initials []string
+	for _,v := range names {
+		initials = append(initials, v[:1])
+	}
+	if len(initials) <1 {
+		return initials[0], "_"
+	}
+	return initials[0], initials[1]
+}
+
 
 func main() {
 	
@@ -32,7 +47,11 @@ func main() {
 	cycleNames(names,sayBye )
 
 	area1 := circleArea(45.5)
-	
 	fmt.Printf("CIrcle area : %2.3f \n", area1)
+
+	fn , sn := getInitials("Jeffery Epstien")
+	fmt.Printf("Intials : %v %v", fn , sn )
+
+
 }
 
