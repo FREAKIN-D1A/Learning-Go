@@ -1,22 +1,34 @@
 package main
 
-import "fmt"
+import ( 
+"fmt"
+ "strings"
+)
 
 func main() {
-	age := 20
-	name := "Kenny"
-	score := 20.56
+	// arrays
+	var ages [3]int = [3]int{20, 21, 22}
+	ages[2] = 56
+	fmt.Println(ages)
 
-	fmt.Printf("Hello I am %v and my age is %v \n", name, age)
-	fmt.Printf("Hello I am %q and my age is %q \n", name, age)
-	fmt.Printf("Hello I am %T and my age is %T \n", name, age)
+	var ages2 = [3]int{20, 21, 22}
+	fmt.Println(ages2)
 
-	fmt.Printf("Your score is : %0.3f \n", score)
+	names := [4]string{"Yosi", "Tanahasi", "Omega", "ALpha"}
+	fmt.Println(names, len(names))
 
-	var str = fmt.Sprintf("Hello I am %v and my age is %v \n", name, age)
-	fmt.Println("Saved String :",str)
+	// slices
+	var scores = []int{20, 21, 22}
+	scores[2] = 25
+	fmt.Println(scores, len(scores))
 
+	scores = append(scores,99,78, 45, 78 ,78)
+	fmt.Println(scores, len(scores))
 
+	rangeOne := scores[0:3]
+	fmt.Println(rangeOne, len(rangeOne))
 
+	
+	rangeTwo := scores[2:]
+	fmt.Println(rangeTwo, len(rangeTwo))
 }
-
