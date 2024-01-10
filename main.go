@@ -3,28 +3,20 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Hello world")
-	var nameOne string = "MariaDB"
-	fmt.Println(nameOne)
+	age := 20
+	name := "Kenny"
+	score := 20.56
 
-	var nameTwo = "Luigi"
-	fmt.Println(nameTwo)
+	fmt.Printf("Hello I am %v and my age is %v \n", name, age)
+	fmt.Printf("Hello I am %q and my age is %q \n", name, age)
+	fmt.Printf("Hello I am %T and my age is %T \n", name, age)
 
-	var nameThree string 
-	fmt.Println(nameThree)
+	fmt.Printf("Your score is : %0.3f \n", score)
 
-	nameOne = "CM Punk"
-	nameTwo = "Kenny Punk"
-	
-	fmt.Println(nameOne, nameTwo, nameThree)
+	var str = fmt.Sprintf("Hello I am %v and my age is %v \n", name, age)
+	fmt.Println("Saved String :",str)
 
-	nameFour := "Cody"
-	fmt.Println(nameOne, nameTwo, nameThree, nameFour)
 
-	var ageOne int = 20
-	var ageTwo = 30
-	ageThree := 40
-	
-	fmt.Println(ageOne, ageTwo, ageThree)
+
 }
 
