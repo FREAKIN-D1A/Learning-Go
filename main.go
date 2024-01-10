@@ -1,20 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-	"strings"
-)
+import "fmt"
 
 func main() {
-	greetings := "Hello there, my friends"
-	fmt.Println(strings.Contains(greetings, "hello"))
-	fmt.Println(strings.ReplaceAll(greetings, "Hello", "Hi"))
-	fmt.Println(strings.ToUpper(greetings))
-	fmt.Println(strings.ToLower(greetings))
-	fmt.Println(strings.Index(greetings, "th"))
 
-	ages := []int{45,78,98,23,5,47,77,14,10}
-	sort.Ints(ages)
-	fmt.Println(ages)
+	for i := 0; i <= 5; i++ {
+		fmt.Println("Value of i is :", i )
+	}
+	fmt.Println("--")
+
+	names := []string{"Mario", "Luigi", "Cica", "Joe", "Punk", "Bret"}
+	for i := 0; i < len(names); i++ {
+		fmt.Printf("Value of i is : %v , and the element: %v \n", i, names[i]) 
+	}
+	fmt.Println("--")
+	
+	for index, value := range names {
+			fmt.Printf("Value of index is : %v , and the element value : %v \n", index, value )
+	}
+
 }
